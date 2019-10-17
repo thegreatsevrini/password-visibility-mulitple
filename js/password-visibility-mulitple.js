@@ -1,5 +1,5 @@
 //turn nodelist into an array
-var passwords = Array.prototype.slice.call(document.querySelectorAll('.password'));
+var passwords = Array.prototype.slice.call(document.querySelectorAll('[type="password"]'));
 //grabs checkbox
 var togglePasswords = document.querySelector('#show-passwords');
 
