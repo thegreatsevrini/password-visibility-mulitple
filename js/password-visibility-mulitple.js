@@ -1,20 +1,19 @@
-//turn nodelist into an array
+//turns nodeList into an array and assigns it to a variable
 var passwords = Array.prototype.slice.call(document.querySelectorAll('[type="password"]'));
 //grabs checkbox
 var togglePasswords = document.querySelector('#show-passwords');
 
 
-//allow user to toggle mulitple password fields at once
+//listens for click events on togglePasswords checkbox
 togglePasswords.addEventListener('click', function(event) {
-    if (togglePasswords.checked) {
-        passwords.forEach(function (password, index) {
+    //loops through each password field in passwords array
+    passwords.forEach(function (password, index) {
+        //checks to see if the check box is checked and if it is, changes the type of the current password to text (shows the password).
+        //otherwise it changes the current password type to password(masks password).
+        if (togglePasswords.checked) {
             password.type = 'text';
-        });
-    } else {
-        passwords.forEach(function (password, index) {
+        } else {
             password.type = 'password';
-        });
-    
-}
-
+        }
+    });
 });
